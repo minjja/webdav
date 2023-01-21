@@ -3,23 +3,17 @@ version: '3.7'
 services:
 
     app:
-        image: k3vmcd/webdav
-        ports:
-            - 443:443
-        volumes:
-            - type: volume
-              source: media
-              target: /var/lib/dav
+        image: ghcr.io/minjja/webdav
         secrets:
             - source: htpasswd
-              target: /user.passwd
-        environment:
-            AUTH_TYPE: Basic
-            SSL_CERT: selfsigned
-            SERVER_NAMES: webdav.cloud.cherryservers.net
+              target: /etc/apache2/.htpasswd
+        volumes:
+            - type: volume
+              source: webdav
+              target: /var/www/webdav
 
 volumes:
-    media:
+    webdav:
 
 secrets:
     htpasswd:
