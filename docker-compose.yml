@@ -6,5 +6,5 @@ services:
         build:
             context: .
             dockerfile: docker/Dockerfile
-        ports:
-            - 80/tcp
+        volumes:
+          - ./docker/etc/.htpasswd:/etc/apache2/.htpasswd
