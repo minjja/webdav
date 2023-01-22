@@ -9,11 +9,11 @@ services:
               target: /etc/apache2/.htpasswd
         volumes:
             - type: volume
-              source: webdav
-              target: /var/www/webdav
+              source: html
+              target: /var/www/html
 
 volumes:
-    webdav:
+    html:
 
 secrets:
     htpasswd:
