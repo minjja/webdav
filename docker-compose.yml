@@ -5,6 +5,8 @@ services:
     app:
         build:
             context: .
-            dockerfile: docker/Dockerfile
+            dockerfile: Dockerfile
         volumes:
-          - ./docker/etc/.htpasswd:/etc/apache2/.htpasswd
+            - type: bind
+              source: ./etc/.htpasswd
+              target: /usr/local/apache2/.htpasswd
