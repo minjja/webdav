@@ -1,2 +1,2 @@
-etc/.htpasswd
+.htpasswd
 docker-compose.override.yml

@@ -8,7 +8,5 @@ services:
             dockerfile: Dockerfile
         volumes:
             - type: bind
-              source: ./etc/.htpasswd
+              source: .htpasswd
               target: /usr/local/apache2/.htpasswd
-        environment:
-            SSL: no
