@@ -17,7 +17,7 @@ services:
         volumes:
             - type: volume
               source: webdav
-              target: /usr/local/apache2/webdav/uploads
+              target: /usr/local/apache2/uploads
 
 volumes:
     uploads:

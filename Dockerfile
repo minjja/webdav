@@ -7,5 +7,5 @@ ADD etc/httpd-dav.conf conf/extra/httpd-dav.conf
 ADD etc/httpd-ssl.conf conf/extra/httpd-ssl.conf
 ADD etc/httpd-vhosts.conf conf/extra/httpd-vhosts.conf
 
-RUN mkdir webdav var ssl \
-    && chown -R www-data:www-data webdav var
+RUN mkdir uploads var ssl \
+    && chown -R www-data:www-data uploads var
