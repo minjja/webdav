@@ -8,4 +8,4 @@ ADD etc/httpd-ssl.conf conf/extra/httpd-ssl.conf
 ADD etc/httpd-vhosts.conf conf/extra/httpd-vhosts.conf
 
 RUN mkdir webdav var ssl \
-    && chown www-data:www-data webdav var
+    && chown -R www-data:www-data webdav var
