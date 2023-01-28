@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+
+    httpd:
+        image: ghcr.io/minjja/webdav
+        secrets:
+            - source: htpasswd
+              target: /usr/local/apache2/.htpasswd
+        volumes:
+            - type: volume
+              source: webdav
+              target: /usr/local/apache2/webdav
+
+volumes:
+    webdav:
+
+secrets:
+    htpasswd:
+        external: true

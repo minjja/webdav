@@ -10,3 +10,5 @@ services:
             - type: bind
               source: ./etc/.htpasswd
               target: /usr/local/apache2/.htpasswd
+        environment:
+            SSL: no
