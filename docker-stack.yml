@@ -7,6 +7,10 @@ services:
         secrets:
             - source: htpasswd
               target: /usr/local/apache2/.htpasswd
+            - source: key.pem
+              target: /usr/local/apache2/ssl/key.pem
+            - source: cert.pem
+              target: /usr/local/apache2/ssl/cert.pem
         volumes:
             - type: volume
               source: webdav
@@ -17,4 +21,8 @@ volumes:
 
 secrets:
     htpasswd:
+        external: true
+    key.pem:
+        external: true
+    cert.pem:
         external: true
