@@ -4,6 +4,9 @@ services:
 
     httpd:
         image: ghcr.io/minjja/webdav
+        ports:
+            - 80:80/tcp
+            - 443:443/tcp
         secrets:
             - source: htpasswd
               target: /usr/local/apache2/.htpasswd
@@ -14,10 +17,10 @@ services:
         volumes:
             - type: volume
               source: webdav
-              target: /usr/local/apache2/webdav
+              target: /usr/local/apache2/webdav/uploads
 
 volumes:
-    webdav:
+    uploads:
 
 secrets:
     htpasswd:
